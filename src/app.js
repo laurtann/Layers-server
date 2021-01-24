@@ -12,6 +12,8 @@ const contentRouter = require("./routes/content");
 const collectionRouter = require("./routes/collection");
 const app = express();
 
+app.use(cors());
+
 app.use(
   cookieSession({
     name: "session",
@@ -32,7 +34,6 @@ const db = new Pool({
 db.connect();
 
 app.use(logger("dev"));
-app.use(cors());
 app.use(express.json());
 // came as originally false below
 app.use(express.urlencoded({ extended: false }));
