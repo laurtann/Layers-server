@@ -39,7 +39,8 @@ pg.defaults.ssl = true;
 const connectionString = 'postgres://lrlddljhohuvcl:5d021e95c405ac97486a7037e7ecd23e938f814d40a8385b3d60daa1ecd36826@ec2-52-54-174-5.compute-1.amazonaws.com:5432/de6cts8lnm086b';
 
 const db = new pg.Pool({
-  connectionString: connectionString
+  connectionString: connectionString,
+  ssl: { rejectUnauthorized: false }
 })
 db.connect().then(() => console.log('db connected')).catch(error => console.log(error));
 
