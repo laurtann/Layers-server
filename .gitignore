@@ -3,6 +3,5 @@ yarn-error.log
 .env
 .nyc_output
 coverage
-build/
 .DS_Store
 .eslintcache
